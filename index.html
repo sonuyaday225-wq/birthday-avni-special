@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Avni 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffc4e1 50%, #ffb3d9 100%);
+            color: #4a1942;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.7;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateY(50vh) rotate(180deg);
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #d81b60;
+            text-shadow: 3px 3px 6px rgba(216, 27, 96, 0.3);
+            animation: fadeInDown 1.5s ease;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #880e4f;
+            animation: fadeInUp 2s ease;
+            max-width: 600px;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-section {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(216, 27, 96, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .message-section h2 {
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .message-section p {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #4a1942;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .gallery {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery h2 {
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-bottom: 50px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.15);
+            transition: transform 0.3s ease;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .countdown {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .countdown h2 {
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-bottom: 30px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .time-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.15);
+            min-width: 120px;
+        }
+
+        .time-box .number {
+            font-size: 3rem;
+            color: #d81b60;
+            font-weight: bold;
+        }
+
+        .time-box .label {
+            font-size: 1rem;
+            color: #880e4f;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #d81b60;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.3);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #ad1457;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(216, 27, 96, 0.4);
+        }
+
+        .music-player {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(216, 27, 96, 0.3);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1);
+        }
+
+        .music-player span {
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #880e4f;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .message-section h2,
+            .gallery h2,
+            .countdown h2 {
+                font-size: 2rem;
+            }
+            .time-box {
+                min-width: 100px;
+                padding: 20px;
+            }
+            .time-box .number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="hearts-container"></div>
+
+    <section class="hero">
+        <h1>Happy Birthday Avni! 🎂</h1>
+        <p>
+            To the most amazing person in my life... 
+            Today is all about celebrating YOU! 💕
+        </p>
+        <a href="#message" class="btn">Read My Message 💌</a>
+    </section>
+
+    <section id="message" class="message-section">
+        <h2>A Special Message for You 💝</h2>
+        <p>
+            Dear Avni,
+        </p>
+        <p>
+            Every moment with you feels like a beautiful dream. Your smile lights up my world, 
+            and your laughter is the sweetest melody I've ever heard. On this special day, 
+            I want you to know how incredibly blessed I feel to have you in my life.
+        </p>
+        <p>
+            You make every day brighter, every challenge easier, and every moment more meaningful. 
+            Thank you for being the wonderful person you are. Here's to celebrating you today 
+            and always! 🌟
+        </p>
+        <p>
+            Happy Birthday, my love! May all your dreams come true. 💕
+        </p>
+        <p style="margin-top: 40px; font-style: italic;">
+            With all my love,<br>
+            Forever Yours ❤️
+        </p>
+    </section>
+
+    <section class="gallery">
+        <h2>Our Beautiful Memories 📸</h2>
+        <div class="photo-grid">
+            <div class="photo-card">💕</div>
+            <div class="photo-card">🌹</div>
+            <div class="photo-card">✨</div>
+            <div class="photo-card">🎈</div>
+            <div class="photo-card">💝</div>
+            <div class="photo-card">🌸</div>
+        </div>
+    </section>
+
+    <section class="countdown">
+        <h2>Time We've Shared Together ⏰</h2>
+        <div class="countdown-timer">
+            <div class="time-box">
+                <div class="number" id="days">0</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="hours">0</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="minutes">0</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="seconds">0</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <p style="margin-top: 30px; color: #880e4f; font-size: 1.1rem;">
+            Since the day we met... and counting! 💫
+        </p>
+    </section>
+
+    <div class="music-player" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
+
+    <div class="footer">
+        Made with love for Avni 💕
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💕';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('hearts-container').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        setInterval(createHeart, 500);
+
+        const startDate = new Date('2024-01-01T00:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = now - startDate;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        let isPlaying = false;
+        
+        function toggleMusic() {
+            const icon = document.getElementById('music-icon');
+            if (isPlaying) {
+                icon.innerText = '🎵';
+                isPlaying = false;
+            } else {
+                icon.innerText = '🎶';
+                isPlaying = true;
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
